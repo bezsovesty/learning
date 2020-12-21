@@ -5,6 +5,13 @@ def lab2():
         for line in file:
             data.append([float(x) for x in line.split()])
 
+    # Удаление последнего элемента в каждой строке
+    #   чтобы образовать свободный вектор.
+    vector = []
+    for row in data:
+        elem = row.pop()
+        vector.append([elem])
+
 
 if __name__ == '__main__':
     try:
