@@ -1,3 +1,6 @@
+from NumAnalysis import *
+
+
 def lab2():
     # Чтение
     data = []
@@ -11,6 +14,9 @@ def lab2():
     for row in data:
         elem = row.pop()
         vector.append([elem])
+
+    slay = Slay(data, vector)
+    print('Прочитанная матрица:\n', slay)
 
 
 if __name__ == '__main__':
