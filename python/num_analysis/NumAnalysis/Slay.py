@@ -3,7 +3,8 @@ from typing import List, Union
 
 
 class Slay:
-    def __init__(self, matrix: List[List[Union[float, int]]], vector: List[List[Union[float, int]]]):
+    def __init__(self, matrix: List[List[Union[float, int]]],
+                 vector: List[List[Union[float, int]]]):
         self.matrix = Matrix(matrix)
         self.vector = Matrix(vector)
 
@@ -15,7 +16,6 @@ class Slay:
         str_vector = self.vector.__str__()
 
         # Форматирование
-        string = ''
         pos = int(str_matrix.index('\n') / 2) - 3
         head = ' ' * pos + 'MATRIX' + (' ' * (pos + 10)) + 'VECTOR\n'
 
@@ -23,6 +23,7 @@ class Slay:
         str_matrix = str_matrix.split('\n')
         str_vector = str_vector.split('\n')
 
+        string = ''
         for i in range(len(str_matrix)):
             string += str_matrix[i] + '   ' + str_vector[i] + '\n'
 
