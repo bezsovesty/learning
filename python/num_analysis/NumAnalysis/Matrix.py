@@ -57,5 +57,8 @@ class Matrix:
             string += '|\n'
         return string
 
+    def __copy__(self):
+        return Matrix(self.__matrix)
+
     def is_symmetric(self) -> bool:
         return len(self.__matrix) == len(self.__matrix[0])

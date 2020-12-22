@@ -1,10 +1,11 @@
 from .Matrix import Matrix
 from typing import List, Union
+from copy import copy
 
 
 class Slay:
-    def __init__(self, matrix: List[List[Union[float, int]]],
-                 vector: List[List[Union[float, int]]]):
+    def __init__(self, matrix: Union[List[List[Union[float, int]]], Matrix],
+                 vector: Union[List[List[Union[float, int]]], Matrix]):
         self.matrix = Matrix(matrix)
         self.vector = Matrix(vector)
 
@@ -28,3 +29,6 @@ class Slay:
             string += str_matrix[i] + '   ' + str_vector[i] + '\n'
 
         return head + string
+
+    def __copy__(self):
+        return Slay(copy(self.matrix), copy(self.vector))
