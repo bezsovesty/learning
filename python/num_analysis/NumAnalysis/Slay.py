@@ -7,7 +7,10 @@ class Slay:
         self.matrix = Matrix(matrix)
         self.vector = Matrix(vector)
 
-    def __str__(self):
+    def __len__(self) -> int:
+        return len(self.matrix)
+
+    def __str__(self) -> str:
         str_matrix = self.matrix.__str__()
         str_vector = self.vector.__str__()
 
